@@ -38,5 +38,5 @@ func main() {
 		}
 	}
 
-	//log.Fatal("bla")
+	log.Fatal("bla")
 }
