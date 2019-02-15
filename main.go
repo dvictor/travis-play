@@ -16,6 +16,7 @@ func main() {
 	}
 
 	{
+		//Wait for the DB to start
 		b := backoff.NewExponentialBackOff()
 		b.MaxElapsedTime = 1 * time.Minute
 		err := backoff.Retry(func() error {
