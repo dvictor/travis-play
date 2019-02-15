@@ -2,6 +2,13 @@ dist: trusty
 language: go
 go:
   - 1.11.x
+
+before_script:
+  - sudo docker-compose up -d db
     
-script: 
-  - echo ok
+script:
+  - go build main.go
+  - sudo docker-compose up --abort-on-container-exit --exit-code-from app app
+
+after_script: 
+  - sudo docker-compose down

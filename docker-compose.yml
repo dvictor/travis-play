@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  db:
+    image: postgres:10.6
+    environment:
+      - POSTGRES_PASSWORD=password
+    
+  app:
+    image: google/golang-runtime
+    
+    volumes:
+      - .:/data
+        
+    entrypoint: /data/main
+  
